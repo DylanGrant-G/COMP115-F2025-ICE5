@@ -59,6 +59,61 @@ namespace ICE3
             Console.Write("You Selection: ");
             CareerChoice = Convert.ToInt32(Console.ReadLine());
 
+            if(CareerChoice == 1)
+            {
+                Career = "Army";
+                Agility = 35;
+                Strength = 35;
+                Vigour = 30;
+                Perception = 30;
+                Intellect = 25;
+                Will = 25;
+            }
+            else if (CareerChoice == 2)
+            {
+                Career = "Psion";
+                Agility = 30;
+                Strength = 35;
+                Vigour = 30;
+                Perception = 30;
+                Intellect = 35;
+                Will = 25;
+            }
+            else if (CareerChoice == 3)
+            {
+                Career = "Rogue";
+                Agility = 35;
+                Strength = 30;
+                Vigour = 30;
+                Perception = 35;
+                Intellect = 25;
+                Will = 25;
+            }
+            else if (CareerChoice == 4)
+            {
+                Career = "Telepath";
+                Agility = 25;
+                Strength = 25;
+                Vigour = 30;
+                Perception = 30;
+                Intellect = 35;
+                Will = 35;
+            }
+            else if (CareerChoice == 5)
+            {
+                Career = "Tinker";
+                Agility = 30;
+                Strength = 35;
+                Vigour = 25;
+                Perception = 30;
+                Intellect = 35;
+                Will = 25;
+            }
+            else
+            {
+                Console.WriteLine("You entered an incorrect choice. Please run the program again.");
+            }
+
         }
     }
 }

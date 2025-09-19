@@ -28,6 +28,7 @@ namespace ICE3
 
             // Career Variables
             string Career = "Unknown";
+            int CareerChoice = 0;
             bool HasChosenCareer = false;
 
 
@@ -48,8 +49,15 @@ namespace ICE3
             Console.Write("Enter Character Name: ");
             CharacterName = Console.ReadLine();
 
-
-
+            Console.WriteLine("Select your Career: ");
+            Console.WriteLine("1. Army (AGL: 35, STR: 35, VGR: 30, PER: 30, INT: 25, WIL: 25)");
+            Console.WriteLine("2. Psion (AGL: 30, STR: 35, VGR: 30, PER: 25, INT: 35, WIL: 25)");
+            Console.WriteLine("3. Rogue (AGL: 35, STR: 30, VGR: 30, PER: 35, INT: 25, WIL: 25)");
+            Console.WriteLine("4. Telepath (AGL: 25, STR: 25, VGR: 30, PER: 30, INT: 35, WIL: 35)");
+            Console.WriteLine("5. Tinker (AGL: 30, STR: 35, VGR: 25, PER: 30, INT: 35, WIL: 25)");
+            Console.WriteLine("6. Random ");
+            Console.Write("You Selection: ");
+            CareerChoice = Convert.ToInt32(Console.ReadLine());
 
         }
     }

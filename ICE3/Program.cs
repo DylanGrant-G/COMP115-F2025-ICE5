@@ -68,6 +68,7 @@ namespace ICE3
                 Perception = 30;
                 Intellect = 25;
                 Will = 25;
+                HasChosenCareer = true;
             }
             else if (CareerChoice == 2)
             {
@@ -78,6 +79,7 @@ namespace ICE3
                 Perception = 30;
                 Intellect = 35;
                 Will = 25;
+                HasChosenCareer = true;
             }
             else if (CareerChoice == 3)
             {
@@ -88,6 +90,7 @@ namespace ICE3
                 Perception = 35;
                 Intellect = 25;
                 Will = 25;
+                HasChosenCareer = true;
             }
             else if (CareerChoice == 4)
             {
@@ -98,6 +101,7 @@ namespace ICE3
                 Perception = 30;
                 Intellect = 35;
                 Will = 35;
+                HasChosenCareer = true;
             }
             else if (CareerChoice == 5)
             {
@@ -108,10 +112,45 @@ namespace ICE3
                 Perception = 30;
                 Intellect = 35;
                 Will = 25;
+                HasChosenCareer = true;
             }
             else
             {
                 Console.WriteLine("You entered an incorrect choice. Please run the program again.");
+            }
+
+            if(HasChosenCareer == true)
+            {
+                // compute secondary attributes
+                Awareness = Agility + Perception;
+                Toughness = Strength + Vigour;
+                Resolve = Intellect + Will;
+
+                // output the character sheet
+                Console.Clear();
+
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"Character Name: {CharacterName}");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"Career        : {Career}");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine("Primary Attributes");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"Agility        : {Agility}");
+                Console.WriteLine($"Strength       : {Strength}");
+                Console.WriteLine($"Vigour         : {Vigour}");
+                Console.WriteLine($"Perception     : {Perception}");
+                Console.WriteLine($"Intellect      : {Intellect}");
+                Console.WriteLine($"Will           : {Will}");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine("Secondary Attributes");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"Awareness       : {Awareness}");
+                Console.WriteLine($"Toughness       : {Toughness}");
+                Console.WriteLine($"Resolve         : {Resolve}");
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey(true);
             }
 
         }

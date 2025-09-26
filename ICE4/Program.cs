@@ -2,7 +2,7 @@
 
 using System.Reflection.PortableExecutable;
 
-namespace ICE3
+namespace ICE4
 {
     internal class Program
     {
@@ -59,8 +59,9 @@ namespace ICE3
             Console.Write("You Selection: ");
             CareerChoice = Convert.ToInt32(Console.ReadLine());
 
-            if(CareerChoice == 1)
+            switch(CareerChoice)
             {
+                case 1:
                 Career = "Army";
                 Agility = 35;
                 Strength = 35;
@@ -69,9 +70,9 @@ namespace ICE3
                 Intellect = 25;
                 Will = 25;
                 HasChosenCareer = true;
-            }
-            else if (CareerChoice == 2)
-            {
+                break;
+
+                case 2:
                 Career = "Psion";
                 Agility = 30;
                 Strength = 35;
@@ -80,9 +81,9 @@ namespace ICE3
                 Intellect = 35;
                 Will = 25;
                 HasChosenCareer = true;
-            }
-            else if (CareerChoice == 3)
-            {
+                break;
+
+                case 3:
                 Career = "Rogue";
                 Agility = 35;
                 Strength = 30;
@@ -91,9 +92,9 @@ namespace ICE3
                 Intellect = 25;
                 Will = 25;
                 HasChosenCareer = true;
-            }
-            else if (CareerChoice == 4)
-            {
+                break;
+
+                case 4:
                 Career = "Telepath";
                 Agility = 25;
                 Strength = 25;
@@ -102,9 +103,9 @@ namespace ICE3
                 Intellect = 35;
                 Will = 35;
                 HasChosenCareer = true;
-            }
-            else if (CareerChoice == 5)
-            {
+                break;
+
+                case 5:
                 Career = "Tinker";
                 Agility = 30;
                 Strength = 35;
@@ -113,10 +114,25 @@ namespace ICE3
                 Intellect = 35;
                 Will = 25;
                 HasChosenCareer = true;
-            }
-            else
-            {
+                break;
+
+                case 6:
+                Career = "Random";
+                Random d10 = new Random();
+                Agility = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
+                Strength = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11); 
+                Vigour = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
+                Perception = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
+                Intellect = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11); ;
+                Will = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
+                HasChosenCareer = true;
+                break;
+                default:
                 Console.WriteLine("You entered an incorrect choice. Please run the program again.");
+                HasChosenCareer = false;
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey(true);
+                break;
             }
 
             if(HasChosenCareer == true)

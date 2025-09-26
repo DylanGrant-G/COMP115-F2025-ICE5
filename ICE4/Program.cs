@@ -8,8 +8,8 @@ namespace ICE4
     {
         static void Main(string[] args)
         {
-            // variable declaration
 
+            // outer while loop
             ConsoleKey NextKey = ConsoleKey.None;
             while (NextKey != ConsoleKey.Q && NextKey != ConsoleKey.Escape)
             {
@@ -59,8 +59,21 @@ namespace ICE4
                 Console.WriteLine("4. Telepath (AGL: 25, STR: 25, VGR: 30, PER: 30, INT: 35, WIL: 35)");
                 Console.WriteLine("5. Tinker (AGL: 30, STR: 35, VGR: 25, PER: 30, INT: 35, WIL: 25)");
                 Console.WriteLine("6. Random ");
-                Console.Write("You Selection: ");
-                CareerChoice = Convert.ToInt32(Console.ReadLine());
+
+                // Inner while loop
+                bool IsValid = false;
+                while (!IsValid)
+                {
+                    Console.Write("Enter 1 to 6: ");
+                    IsValid = int.TryParse(Console.ReadLine(), out CareerChoice);
+
+                    if (!IsValid)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("Invalid Entry. Try again.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                }
 
                 switch (CareerChoice)
                 {

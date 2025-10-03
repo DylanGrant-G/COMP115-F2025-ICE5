@@ -144,72 +144,7 @@ namespace ICE5
                     continue;
                 }
 
-                    //switch (CareerChoice)
-                    //{
-                    //    case 1:
-                    //        Career = Careers[0];
-
-                    //        UseCareerTemplate(CareerPresets[0]);
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    case 2:
-                    //        Career = Careers[1];
-
-                    //        UseCareerTemplate(CareerPresets[1]);
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    case 3:
-                    //        Career = Careers[2];
-
-                    //        UseCareerTemplate(CareerPresets[2]);
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    case 4:
-                    //        Career = Careers[3];
-
-                    //        UseCareerTemplate(CareerPresets[3]);
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    case 5:
-                    //        Career = Careers[4];
-
-                    //        UseCareerTemplate(CareerPresets[4]);
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    case 6:
-                    //        Career = "Random";
-
-                    //        for (int index = 0; index < 6; index++)
-                    //        {
-                    //            PrimaryAttributes[index] = roll5d10();
-                    //        }
-
-
-                    //        HasChosenCareer = true;
-                    //        break;
-
-                    //    default:
-                    //        Console.WriteLine("You entered an incorrect choice. Please run the program again.");
-                    //        HasChosenCareer = false;
-                    //        Console.WriteLine("Press Q or ESC to exit.");
-                    //        NextKey = Console.ReadKey(true).Key;
-                    //        continue;
-                    //}
+                    
 
                 if (HasChosenCareer == true)
                 {

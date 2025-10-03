@@ -22,14 +22,7 @@ namespace ICE5
                 }
                 return total;
             }
-            // local helper funtion that assign the career template
-            void UseCareerTemplate(int[] career)
-            {
-                for (int index = 0; index < 6; index++)
-                {
-                    PrimaryAttributes[index] = career[index];
-                }
-            }
+
 
             // Primary Attribute Array
             int[] PrimaryAttributes = new int[6];
@@ -47,6 +40,15 @@ namespace ICE5
             int[] Tinker = [30, 35, 25, 30, 35, 25];
             string[] Careers = ["Army", "Psion", "Rouge", "Telepath", "Tinker"];
 
+            // local helper funtion that assign the career template
+            void UseCareerTemplate(int[] career)
+            {
+                for (int index = 0; index < 6; index++)
+                {
+                    PrimaryAttributes[index] = career[index];
+                }
+            }
+
             // outer while loop
             ConsoleKey NextKey = ConsoleKey.None;
             while (NextKey != ConsoleKey.Q && NextKey != ConsoleKey.Escape)
@@ -54,18 +56,18 @@ namespace ICE5
                 // Character's Name
                 string CharacterName = "Unknown";
 
-                // Primary Attributes
-                int Agility = 0;
-                int Strength = 0;
-                int Vigour = 0;
-                int Perception = 0;
-                int Intellect = 0;
-                int Will = 0;
+                //// Primary Attributes
+                //int Agility = 0;
+                //int Strength = 0;
+                //int Vigour = 0;
+                //int Perception = 0;
+                //int Intellect = 0;
+                //int Will = 0;
 
-                // Secondary Attributes
-                int Awareness = 0;
-                int Toughness = 0;
-                int Resolve = 0;
+                //// Secondary Attributes
+                //int Awareness = 0;
+                //int Toughness = 0;
+                //int Resolve = 0;
 
                 // Career Variables
                 string Career = "Unknown";
@@ -73,9 +75,7 @@ namespace ICE5
                 bool HasChosenCareer = false;
 
 
-                int min = 5;
-                int max = 50;
-
+                
 
 
                 // Change the Console colours
@@ -120,12 +120,12 @@ namespace ICE5
 
                         UseCareerTemplate(Army);
 
-                        Agility = 35;
-                        Strength = 35;
-                        Vigour = 30;
-                        Perception = 30;
-                        Intellect = 25;
-                        Will = 25;
+                        //Agility = 35;
+                        //Strength = 35;
+                        //Vigour = 30;
+                        //Perception = 30;
+                        //Intellect = 25;
+                        //Will = 25;
                         HasChosenCareer = true;
                         break;
 
@@ -134,12 +134,12 @@ namespace ICE5
 
                         UseCareerTemplate(Psion);
 
-                        Agility = 30;
-                        Strength = 35;
-                        Vigour = 30;
-                        Perception = 30;
-                        Intellect = 35;
-                        Will = 25;
+                        //Agility = 30;
+                        //Strength = 35;
+                        //Vigour = 30;
+                        //Perception = 30;
+                        //Intellect = 35;
+                        //Will = 25;
                         HasChosenCareer = true;
                         break;
 
@@ -148,12 +148,12 @@ namespace ICE5
 
                         UseCareerTemplate(Rouge);
 
-                        Agility = 35;
-                        Strength = 30;
-                        Vigour = 30;
-                        Perception = 35;
-                        Intellect = 25;
-                        Will = 25;
+                        //Agility = 35;
+                        //Strength = 30;
+                        //Vigour = 30;
+                        //Perception = 35;
+                        //Intellect = 25;
+                        //Will = 25;
                         HasChosenCareer = true;
                         break;
 
@@ -162,12 +162,12 @@ namespace ICE5
 
                         UseCareerTemplate(Telepath);
 
-                        Agility = 25;
-                        Strength = 25;
-                        Vigour = 30;
-                        Perception = 30;
-                        Intellect = 35;
-                        Will = 35;
+                        //Agility = 25;
+                        //Strength = 25;
+                        //Vigour = 30;
+                        //Perception = 30;
+                        //Intellect = 35;
+                        //Will = 35;
                         HasChosenCareer = true;
                         break;
 
@@ -176,12 +176,12 @@ namespace ICE5
 
                         UseCareerTemplate(Tinker);
 
-                        Agility = 30;
-                        Strength = 35;
-                        Vigour = 25;
-                        Perception = 30;
-                        Intellect = 35;
-                        Will = 25;
+                        //Agility = 30;
+                        //Strength = 35;
+                        //Vigour = 25;
+                        //Perception = 30;
+                        //Intellect = 35;
+                        //Will = 25;
                         HasChosenCareer = true;
                         break;
 
@@ -193,12 +193,12 @@ namespace ICE5
                             PrimaryAttributes[index] = roll5d10();
                         }
 
-                        Agility = roll5d10();
-                        Strength = roll5d10();
-                        Vigour = roll5d10();
-                        Perception = roll5d10();
-                        Intellect = roll5d10();
-                        Will = roll5d10();
+                        //Agility = roll5d10();
+                        //Strength = roll5d10();
+                        //Vigour = roll5d10();
+                        //Perception = roll5d10();
+                        //Intellect = roll5d10();
+                        //Will = roll5d10();
                         HasChosenCareer = true;
                         break;
 
@@ -213,9 +213,13 @@ namespace ICE5
                 if (HasChosenCareer == true)
                 {
                     // compute secondary attributes
-                    Awareness = Agility + Perception;
-                    Toughness = Strength + Vigour;
-                    Resolve = Intellect + Will;
+                    SecondaryAttributes[0] = PrimaryAttributes[0] + PrimaryAttributes[3];
+                    SecondaryAttributes[1] = PrimaryAttributes[1] + PrimaryAttributes[2];
+                    SecondaryAttributes[2] = PrimaryAttributes[4] + PrimaryAttributes[5];
+
+                    //Awareness = Agility + Perception;
+                    //Toughness = Strength + Vigour;
+                    //Resolve = Intellect + Will;
 
                     // output the character sheet
                     Console.Clear();
@@ -227,18 +231,20 @@ namespace ICE5
                     Console.WriteLine("------------------------------------------------------");
                     Console.WriteLine("Primary Attributes");
                     Console.WriteLine("------------------------------------------------------");
-                    Console.WriteLine($"Agility        : {Agility}");
-                    Console.WriteLine($"Strength       : {Strength}");
-                    Console.WriteLine($"Vigour         : {Vigour}");
-                    Console.WriteLine($"Perception     : {Perception}");
-                    Console.WriteLine($"Intellect      : {Intellect}");
-                    Console.WriteLine($"Will           : {Will}");
+                    //Console.WriteLine($"Agility        : {Agility}");
+                    //Console.WriteLine($"Strength       : {Strength}");
+                    //Console.WriteLine($"Vigour         : {Vigour}");
+                    //Console.WriteLine($"Perception     : {Perception}");
+                    //Console.WriteLine($"Intellect      : {Intellect}");
+                    //Console.WriteLine($"Will           : {Will}");
+                    PrintAttribute(PrimaryAttributeNames, PrimaryAttributes);
                     Console.WriteLine("------------------------------------------------------");
                     Console.WriteLine("Secondary Attributes");
                     Console.WriteLine("------------------------------------------------------");
-                    Console.WriteLine($"Awareness       : {Awareness}");
-                    Console.WriteLine($"Toughness       : {Toughness}");
-                    Console.WriteLine($"Resolve         : {Resolve}");
+                    //Console.WriteLine($"Awareness       : {Awareness}");
+                    //Console.WriteLine($"Toughness       : {Toughness}");
+                    //Console.WriteLine($"Resolve         : {Resolve}");
+                    PrintAttribute(SecondaryAttributeNames, SecondaryAttributes);
                     Console.WriteLine("------------------------------------------------------");
                     Console.WriteLine("Press Q or ESC to Exit");
                     NextKey = Console.ReadKey(true).Key;

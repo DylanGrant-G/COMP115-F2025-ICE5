@@ -117,7 +117,7 @@ namespace ICE5
                     }
                 }
 
-                if (CareerChoice >= 1 && CareerChoice <= 6)
+                if (CareerChoice >= 1 && CareerChoice <= 5)
                 {
                     Career = Careers[CareerChoice - 1];
                     UseCareerTemplate(CareerPresets[CareerChoice - 1]);
@@ -152,10 +152,6 @@ namespace ICE5
                     SecondaryAttributes[0] = PrimaryAttributes[0] + PrimaryAttributes[3];
                     SecondaryAttributes[1] = PrimaryAttributes[1] + PrimaryAttributes[2];
                     SecondaryAttributes[2] = PrimaryAttributes[4] + PrimaryAttributes[5];
-
-                    //Awareness = Agility + Perception;
-                    //Toughness = Strength + Vigour;
-                    //Resolve = Intellect + Will;
 
                     // output the character sheet
                     Console.Clear();

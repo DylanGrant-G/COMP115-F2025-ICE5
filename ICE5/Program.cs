@@ -10,6 +10,7 @@ namespace ICE5
     {
         static void Main(string[] args)
         {
+            // local helper funtion
             Random d10 = new Random();
             int roll5d10()
             {
@@ -19,6 +20,14 @@ namespace ICE5
                     total += (d10.Next(1, 11));
                 }
                 return total;
+            }
+            // local helper funtion that assign the career template
+            void UseCareerTemplate(int[] career)
+            {
+                for (int index = 0; index < 6; index++)
+                {
+                    PrimaryAttributes[index] = career[index];
+                }
             }
 
             // Primary Attribute Array
@@ -107,6 +116,9 @@ namespace ICE5
                 {
                     case 1:
                         Career = "Army";
+
+                        UseCareerTemplate(Army);
+
                         Agility = 35;
                         Strength = 35;
                         Vigour = 30;
@@ -118,6 +130,9 @@ namespace ICE5
 
                     case 2:
                         Career = "Psion";
+
+                        UseCareerTemplate(Psion);
+
                         Agility = 30;
                         Strength = 35;
                         Vigour = 30;
@@ -129,6 +144,9 @@ namespace ICE5
 
                     case 3:
                         Career = "Rogue";
+
+                        UseCareerTemplate(Rouge);
+
                         Agility = 35;
                         Strength = 30;
                         Vigour = 30;
@@ -140,6 +158,9 @@ namespace ICE5
 
                     case 4:
                         Career = "Telepath";
+
+                        UseCareerTemplate(Telepath);
+
                         Agility = 25;
                         Strength = 25;
                         Vigour = 30;
@@ -151,6 +172,9 @@ namespace ICE5
 
                     case 5:
                         Career = "Tinker";
+
+                        UseCareerTemplate(Tinker);
+
                         Agility = 30;
                         Strength = 35;
                         Vigour = 25;
@@ -162,6 +186,12 @@ namespace ICE5
 
                     case 6:
                         Career = "Random";
+
+                        for (int index = 0; index < 6; index++)
+                        {
+                            PrimaryAttributes[index] = roll5d10();
+                        }
+
                         Agility = roll5d10();
                         Strength = roll5d10();
                         Vigour = roll5d10();

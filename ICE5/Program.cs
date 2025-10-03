@@ -29,6 +29,14 @@ namespace ICE5
             int[] SecondaryAttributes = new int[6];
             string[] SecondaryAttributeNames = ["Awareness", "Tougness", "Resolve"];
 
+            // Career Array
+            int[] Army = [35, 35, 30, 30, 25, 25];
+            int[] Psion = [30, 35, 30, 25, 35, 25];
+            int[] Rouge = [35, 30, 30, 35, 25, 25];
+            int[] Telepath = [25, 25, 30, 30, 35, 35];
+            int[] Tinker = [30, 35, 25, 30, 35, 25];
+            string[] Careers = ["Army", "Psion", "Rouge", "Telepath", "Tinker"];
+
             // outer while loop
             ConsoleKey NextKey = ConsoleKey.None;
             while (NextKey != ConsoleKey.Q && NextKey != ConsoleKey.Escape)

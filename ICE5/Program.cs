@@ -33,6 +33,9 @@ namespace ICE5
             int[] PrimaryAttributes = new int[6];
             string[] PrimaryAttributeNames = ["Agility", "Strength", "Vigur", "Pereception", "Intellect", "Will"];
 
+            //Parallel Arrays
+            string[] PrimaryAttributesShort = ["AGL", "STR", "VGR", "PER", "INT", "WIL"];
+
             // Secondary Attribute Array
             int[] SecondaryAttributes = new int[6];
             string[] SecondaryAttributeNames = ["Awareness", "Tougness", "Resolve"];
@@ -114,7 +117,7 @@ namespace ICE5
                     }
                 }
 
-                if (CareerChoice == 0 && CareerChoice < 6)
+                if (CareerChoice >= 1 && CareerChoice <= 6)
                 {
                     Career = Careers[CareerChoice - 1];
                     UseCareerTemplate(CareerPresets[CareerChoice - 1]);

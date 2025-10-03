@@ -146,7 +146,6 @@ namespace ICE5
 
                     case 6:
                         Career = "Random";
-                        Random d10 = new Random();
                         Agility = roll5d10();
                         Strength = roll5d10();
                         Vigour = roll5d10();

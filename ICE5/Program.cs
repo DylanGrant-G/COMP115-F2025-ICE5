@@ -21,6 +21,14 @@ namespace ICE5
                 return total;
             }
 
+            // Primary Attribute Array
+            int[] PrimaryAttributes = new int[6];
+            string[] PrimaryAttributeNames = ["Agility", "Strength", "Vigur", "Pereception", "Intellect", "Will"];
+
+            // Secondary Attribute Array
+            int[] SecondaryAttributes = new int[6];
+            string[] SecondaryAttributeNames = ["Awareness", "Tougness", "Resolve"];
+
             // outer while loop
             ConsoleKey NextKey = ConsoleKey.None;
             while (NextKey != ConsoleKey.Q && NextKey != ConsoleKey.Escape)

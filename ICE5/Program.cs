@@ -1,5 +1,6 @@
 ﻿// copied from https://github.com/GeorgianCollege/COMP1115-F2025-ICE2
 
+using System;
 using System.Collections;
 using System.Numerics;
 using System.Reflection.PortableExecutable;
@@ -243,6 +244,15 @@ namespace ICE5
                     NextKey = Console.ReadKey(true).Key;
                     Console.Clear();
                     continue;
+
+                    void PrintAttribute(string[] attributeNames, int[] attributeValues)
+                    {
+                        for (int index = 0; index < attributeNames.Length; index++)
+                        {
+                            Console.WriteLine($"{attributeNames[index]} : {attributeValues[index]}");
+                        }
+                        
+                    }
                 }
             }
 

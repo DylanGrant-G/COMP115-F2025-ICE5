@@ -1,13 +1,25 @@
 ﻿// copied from https://github.com/GeorgianCollege/COMP1115-F2025-ICE2
 
+using System.Collections;
+using System.Numerics;
 using System.Reflection.PortableExecutable;
 
-namespace ICE4
+namespace ICE5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Random d10 = new Random();
+            int roll5d10()
+            {
+                int total = 0;
+                for (int roll = 0; roll < 5; roll++)
+                {
+                    total += (d10.Next(1, 11));
+                }
+                return total;
+            }
 
             // outer while loop
             ConsoleKey NextKey = ConsoleKey.None;
@@ -135,12 +147,12 @@ namespace ICE4
                     case 6:
                         Career = "Random";
                         Random d10 = new Random();
-                        Agility = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
-                        Strength = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
-                        Vigour = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
-                        Perception = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
-                        Intellect = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11); ;
-                        Will = d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11) + d10.Next(1, 11);
+                        Agility = roll5d10();
+                        Strength = roll5d10();
+                        Vigour = roll5d10();
+                        Perception = roll5d10();
+                        Intellect = roll5d10();
+                        Will = roll5d10();
                         HasChosenCareer = true;
                         break;
 
